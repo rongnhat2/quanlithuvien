@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class BookBorrow extends Migration
+class UserClass extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,12 @@ class BookBorrow extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('user_class', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('classification_name');
+            $table->Integer('can_borrow');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class BookBorrow extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('user_class');
     }
 }
