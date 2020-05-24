@@ -40,83 +40,41 @@
 								Tên Sách
 							</div>
 							<div class="book_time">
-								Thời Gian Đặt
+								Ngày Đặt
+							</div>
+							<div class="book_time">
+								Ngày Trả
 							</div>
 							<div class="book_status">
 								Trạng Thái
 							</div>
 						</div>
 						<div class="borrowing_body">
-							<div class="borrowing_item">
-								<div class="book_id">
-									1
+							<?php foreach ($book_borrow as $key => $value): ?>
+								<div class="borrowing_item">
+									<div class="book_id">
+										{{ $key + 1 }}
+									</div>
+									<div class="book_title">
+										{{ $value->book_name }}
+									</div>
+									<div class="book_time">
+										{{ substr($value->created_at, 0, 10) }}
+									</div>
+									<div class="book_time">
+										{{ substr($value->date_back, 0, 10) }}
+									</div>
+									<div class="book_status">
+										@if($value->status == -1)
+											<span class="outdate">Đã Quá Hạn</span>
+										@elseif($value->status == 1)
+											<span class="waiting">Đang Chờ</span>
+										@elseif($value->status == 2)
+											<span class="success">Đang Mượn</span>
+										@endif
+									</div>
 								</div>
-								<div class="book_title">
-									Sách 1
-								</div>
-								<div class="book_time">
-									1/1/1/1
-								</div>
-								<div class="book_status">
-									Đang Chờ
-								</div>
-							</div>
-							<div class="borrowing_item">
-								<div class="book_id">
-									1
-								</div>
-								<div class="book_title">
-									Sách 1
-								</div>
-								<div class="book_time">
-									1/1/1/1
-								</div>
-								<div class="book_status">
-									Đang Chờ
-								</div>
-							</div>
-							<div class="borrowing_item">
-								<div class="book_id">
-									1
-								</div>
-								<div class="book_title">
-									Sách 1
-								</div>
-								<div class="book_time">
-									1/1/1/1
-								</div>
-								<div class="book_status">
-									Đang Chờ
-								</div>
-							</div>
-							<div class="borrowing_item">
-								<div class="book_id">
-									1
-								</div>
-								<div class="book_title">
-									Sách 1
-								</div>
-								<div class="book_time">
-									1/1/1/1
-								</div>
-								<div class="book_status">
-									Đang Chờ
-								</div>
-							</div>
-							<div class="borrowing_item">
-								<div class="book_id">
-									1
-								</div>
-								<div class="book_title">
-									Sách 1
-								</div>
-								<div class="book_time">
-									1/1/1/1
-								</div>
-								<div class="book_status">
-									Đang Chờ
-								</div>
-							</div>
+							<?php endforeach ?>
 						</div>
 					</div>
 				</div>
@@ -138,83 +96,37 @@
 								Tên Sách
 							</div>
 							<div class="book_time">
-								Thời Gian Đặt
+								Ngày Đặt
+							</div>
+							<div class="book_time">
+								Ngày Trả
 							</div>
 							<div class="book_status">
-								Ngày Trả
+								Trạng Thái
 							</div>
 						</div>
 						<div class="borrowing_body">
-							<div class="borrowing_item">
-								<div class="book_id">
-									1
+							<?php foreach ($book_borrowed as $key => $value): ?>
+								<div class="borrowing_item">
+									<div class="book_id">
+										{{ $key + 1 }}
+									</div>
+									<div class="book_title">
+										{{ $value->book_name }}
+									</div>
+									<div class="book_time">
+										{{ substr($value->created_at, 0, 10) }}
+									</div>
+									<div class="book_time">
+										{{ substr($value->date_back, 0, 10) }}
+									</div>
+									<div class="book_status">
+										@if($value->status == 0)
+											<span class="done">Đã Trả</span>
+										@endif
+									</div>
 								</div>
-								<div class="book_title">
-									Sách 1
-								</div>
-								<div class="book_time">
-									1/1/1/1
-								</div>
-								<div class="book_status">
-									Đang Chờ
-								</div>
-							</div>
-							<div class="borrowing_item">
-								<div class="book_id">
-									1
-								</div>
-								<div class="book_title">
-									Sách 1
-								</div>
-								<div class="book_time">
-									1/1/1/1
-								</div>
-								<div class="book_status">
-									Đang Chờ
-								</div>
-							</div>
-							<div class="borrowing_item">
-								<div class="book_id">
-									1
-								</div>
-								<div class="book_title">
-									Sách 1
-								</div>
-								<div class="book_time">
-									1/1/1/1
-								</div>
-								<div class="book_status">
-									Đang Chờ
-								</div>
-							</div>
-							<div class="borrowing_item">
-								<div class="book_id">
-									1
-								</div>
-								<div class="book_title">
-									Sách 1
-								</div>
-								<div class="book_time">
-									1/1/1/1
-								</div>
-								<div class="book_status">
-									Đang Chờ
-								</div>
-							</div>
-							<div class="borrowing_item">
-								<div class="book_id">
-									1
-								</div>
-								<div class="book_title">
-									Sách 1
-								</div>
-								<div class="book_time">
-									1/1/1/1
-								</div>
-								<div class="book_status">
-									Đang Chờ
-								</div>
-							</div>
+							<?php endforeach ?>
 						</div>
 					</div>
 				</div>

@@ -20,8 +20,8 @@
 								<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
 									<div class="select_form">
 										<div class="select_wrapper">
-											<input type="hidden" name="category_index" class="select_index">
-											<input type="hidden" name="category_value" class="select_value">
+											<input type="hidden" name="category_index" class="select_index" required="">
+											<input type="hidden" name="category_value" class="select_value" required="">
 											<div class="select_item"> </div>
 											<div class="select_icon">
 												<i class="fas fa-caret-down"></i>
@@ -37,7 +37,7 @@
 								</div>
 								<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
 									<div class="input_form">
-										<input type="text" name="amount" required="" class="item_amount_input">
+										<input type="text" name="amount" required="" class="item_amount_input" required="">
 									</div>
 								</div>
 								<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">

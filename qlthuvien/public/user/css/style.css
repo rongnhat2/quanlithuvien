@@ -113,10 +113,24 @@
     width: 100%;
 }
 .I-body_list_book .content .book_wrapper{
+    position: relative;
     float: left;
     width: calc(16.66% - 40px);
     overflow: hidden;
     margin: 20px;
+}
+.I-body_list_book .content .book_wrapper .book_status{
+    position: absolute;
+    top: 15px;
+    left: 45px;
+    width: 100%;
+    height: 40px;
+    background-color: red;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
 }
 
 .I-wrapper_book{
@@ -274,6 +288,9 @@
 .I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .status.is-open span{
     color: green
 }
+.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .status.is-open span.is-out{
+    color: red
+}
 .I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .order{
     width: 100%;
     height: 50px;
@@ -355,6 +372,11 @@
 }
 .I-book .book_image{
     width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 .I-book .book_image img{
     width: 100%;
@@ -423,7 +445,7 @@
 }
 .I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_title{
     float: left;
-    width: 30%;
+    width: 15%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -439,11 +461,26 @@
 }
 .I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_status{
     float: left;
-    width: 30%;
+    width: 15%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_status span{
+    font-weight: bold;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_status span.waiting{
+    color: #ffc107
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_status span.success{
+    color: #28a745
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_status span.done{
+    color: #007bff
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_status span.outdate{
+    color: #dc3545
 }
 .I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .borrowing_body{
     width: 100%;

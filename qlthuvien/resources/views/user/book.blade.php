@@ -67,7 +67,12 @@
 										Lượt Xem : <span><?php echo $book->book_view ?></span>
 									</div>
 									<div class="status is-open">
-										Trạng Thái: <span>Còn Sách</span>
+										Trạng Thái: 
+											@if($book->book_amount - $book->book_borrow <= 0)
+												<span class="is-out">Hết sách</span>
+											@else
+												<span>Còn Sách</span>
+											@endif
 									</div>
 									<div class="order">
 										<a data-toggle="modal" data-target="#order_book" > Đặt Sách </a>
@@ -88,6 +93,11 @@
 						<div class="content">
 							<?php foreach ($book_related as $key => $value): ?>
 								<div class="book_wrapper">
+									@if($value->book_amount - $value->book_borrow <= 0)
+										<div class="book_status">
+											Hết sách
+										</div>
+									@endif
 									<a href="{{ route('customer.book', ['id' => $value->id]) }}" class="I-book">
 										<div class="book_image">
 											<img src="{{ asset($value->book_image) }}">

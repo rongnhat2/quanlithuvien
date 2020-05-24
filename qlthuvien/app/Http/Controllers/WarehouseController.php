@@ -25,8 +25,8 @@ class WarehouseController extends Controller
     public function index()
     {
         $warehouse = DB::table('warehouse')
-            ->join('book', 'warehouse.id_item', '=', 'book.id')
-            ->select('warehouse.*', 'book.book_name as book_name')
+            ->join('items', 'warehouse.id_item', '=', 'items.id')
+            ->select('warehouse.*', 'items.book_name as book_name')
             ->get();
         $total_item = DB::raw('Count(warehouse.qty_item) as total');
         // $count_ware = DB::table('warehouse')->where('warehouse.created_at', '=', '2020-05-10')->get();
@@ -44,7 +44,7 @@ class WarehouseController extends Controller
 
     public function create()
     {
-        $items = DB::table('book')->get();
+        $items = DB::table('items')->get();
         return view('admin.warehouse.add', compact('items'));
     }
 
@@ -54,14 +54,15 @@ class WarehouseController extends Controller
     	try {
             DB::beginTransaction();
             $admin = Session('customer') ? Session::get('customer')->customer['username'] : null;
-            // dd($admin);
-        // dd(Session);
+
 	        foreach ($item as $key => $value) {
-                $amount_ = DB::table('book')->where('id', '=', $item[$key])->first()->book_amount + $amount[$key];
+                // lấy số lượng đang có
+                $amount_ = DB::table('items')->where('id', '=', $item[$key])->first()->book_amount + $amount[$key];
+                // cập nhật số lượng mới
                 $this->item->where('id', '=', $item[$key])->update([
                     'book_amount' => $amount_
                 ]);
-                // DB::table('users')->where->where('id', '=', $item[$key])->update(['item_amounts' => $amount_]);
+                // cập nhật lịch sử
                 $this->warehouse->create([
                     'username' => $admin,
                     'id_item' => $item[$key],

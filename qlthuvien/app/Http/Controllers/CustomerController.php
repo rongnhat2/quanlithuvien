@@ -85,10 +85,12 @@ class CustomerController extends Controller
                 $customer       =   new Customer($customer_session);
                 $customer->Create($customer_session);
                 $request->session()->put('customer', $customer);
-                
+                // dd(Session('customer')->customer['id']);
                 if ($request->screen == 1) {
+                // dd('1 '.Session('customer')->customer['id']);
                     return redirect()->route('customer.order');
                 }else{
+                // dd('0 '.Session('customer')->customer['id']);
                     return redirect()->route('customer.index');
                 }
 			} else {

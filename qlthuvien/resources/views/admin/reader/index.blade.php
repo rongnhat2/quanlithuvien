@@ -58,6 +58,7 @@
 					        <th>Họ Và Tên</th>
 					        <th>Email</th>
 					        <th>Cấp Bậc Khách Hàng</th>
+					        <th>Sửa</th>
 				      	</tr>
 			    	</thead>
 			    	<tbody>
@@ -67,6 +68,11 @@
 					        <td>{{ $value->name }}</td>
 					        <td>{{ $value->email }}</td>
 					        <td>{{ $value->classification_name }}</td>
+					        <td>
+					        	<a href="{{ route('reader.edit', ['id' => $value->user_id]) }}" class="action_table">
+					        		<i class="far fa-edit"></i>
+					        	</a>
+					        </td>
 				      	</tr>
                 		@endforeach
 			    	</tbody>

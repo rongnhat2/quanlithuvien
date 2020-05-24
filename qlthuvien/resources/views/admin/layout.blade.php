@@ -57,11 +57,6 @@
 								</div>
 							</div>
 							<div class="item_nav">
-								<a href="/item" class="link_nav">
-									<i class="fas fa-archive"></i>
-								</a>
-							</div>
-							<div class="item_nav">
 								<a href="/category" class="link_nav">
 									<i class="fas fa-bookmark"></i>
 								</a>
@@ -72,39 +67,14 @@
 								</a>
 							</div>
 							<div class="item_nav">
-								<div class="link_nav">
+								<a href="/item" class="link_nav">
 									<i class="fas fa-book"></i>
-								</div>
-								<div class="dropdown">
-									<a href="#" class="sub_item">
-										
-									</a>
-								</div>
+								</a>
 							</div>
 							<div class="item_nav">
-								<div class="link_nav">
-									<i class="fas fa-bookmark"></i>
-								</div>
-								<div class="dropdown">
-									<a href="#" class="sub_item">
-										
-									</a>
-								</div>
-							</div>
-							<div class="item_nav">
-								<div class="link_nav">
+								<a href="/gallery" class="link_nav">
 									<i class="fas fa-clone"></i>
-								</div>
-							</div>
-							<div class="item_nav">
-								<div class="link_nav">
-									<i class="fas fa-comment"></i>
-								</div>
-							</div>
-							<div class="item_nav">
-								<div class="link_nav">
-									<i class="fas fa-file"></i>
-								</div>
+								</a>
 							</div>
 							<div class="item_nav">
 								<a href="/gallery" class="link_nav">

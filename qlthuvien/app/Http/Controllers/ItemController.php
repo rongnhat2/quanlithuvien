@@ -54,7 +54,7 @@ class ItemController extends Controller
                 'book_writer' => $request->book_writer,
                 'book_status' => '1',
                 'book_detail' => $request->book_detail,
-                'book_amount' => '1',
+                'book_amount' => '0',
                 'book_borrow' => '0',
             ]);
 
