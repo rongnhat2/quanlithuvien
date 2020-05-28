@@ -16,7 +16,7 @@ class FrontController extends Controller
         $new_item =  DB::table('items')->limit(6)->get();
         $most_view_item =  DB::table('items')->orderBy('book_view', 'desc')->limit(6)->get();
         // dd($most_view_item);
-        return view('user.index', compact('categories', 'new_item', 'most_view_item', 'customer'));
+        return view('user.index', compact('categories', 'new_item', 'most_view_item'));
     }
     public function category($id){
         $categories =  DB::table('categories')->get();
