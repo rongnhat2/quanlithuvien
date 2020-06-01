@@ -61,7 +61,7 @@ class FrontController extends Controller
             DB::rollBack();
         }
     }
-    public function book_finded() {
+    public function book_finded(Request $request) {
         // dd($request);
         $categories =  DB::table('categories')->get();
         $value = $request->book_find;

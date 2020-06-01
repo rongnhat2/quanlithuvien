@@ -18,7 +18,7 @@ class UserBook extends Migration
             $table->Integer('user_id');
             $table->Integer('book_id');
             $table->Integer('status');
-            $table->dateTime('date_start');
+            $table->dateTime('date_start')->nullable();;
             $table->dateTime('date_back');
             $table->timestamps();
         });
