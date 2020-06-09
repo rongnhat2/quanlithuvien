@@ -21,54 +21,73 @@ class admin_seed extends Seeder
 	        "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	    ]);
         DB::table('permissions')->insert([
-	        'name'              => 'user-list',
-	        'display_name' 			=> 'Danh Sách Admin',
+	        'name'              => 'roles',
+	        'display_name' 			=> 'Quản Lí Chức Vụ',
 	        "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	        "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	    ]);
 	    DB::table('permissions')->insert([
-	        'name'              => 'user-add',
-	        'display_name' 			=> 'Thêm Admin',
+	        'name'              => 'users',
+	        'display_name' 			=> 'Quản Lí Nhân Viên',
 	        "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	        "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	    ]);
 	    DB::table('permissions')->insert([
-	        'name'              => 'user-edit',
-	        'display_name' 			=> 'Sửa Admin',
+	        'name'              => 'category',
+	        'display_name' 			=> 'Quản Lí Danh Mục',
 	        "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	        "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	    ]);
 	    DB::table('permissions')->insert([
-	        'name'              => 'user-delete',
-	        'display_name' 			=> 'Xóa Admin',
+	        'name'              => 'item',
+	        'display_name' 			=> 'Quản Lí Sách',
 	        "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	        "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	    ]);
 
 	    DB::table('permissions')->insert([
-	        'name'              => 'role-list',
-	        'display_name' 			=> 'danh sách Quyền',
+	        'name'              => 'gallery',
+	        'display_name' 			=> 'Thư Viện Ảnh',
 	        "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	        "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	    ]);
 	    DB::table('permissions')->insert([
-	        'name'              => 'role-add',
-	        'display_name' 			=> 'Thêm Quyền',
+	        'name'              => 'statistical',
+	        'display_name' 			=> 'Xem Thống Kê',
 	        "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	        "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	    ]);
 	    DB::table('permissions')->insert([
-	        'name'              => 'role-edit',
-	        'display_name' 			=> 'Sửa Quyền',
+	        'name'              => 'warehouse',
+	        'display_name' 			=> 'Nhập Xuất Kho',
 	        "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	        "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	    ]);
 	    DB::table('permissions')->insert([
-	        'name'              => 'role-delete',
-	        'display_name' 			=> 'Xóa Quyền',
+	        'name'              => 'user_class',
+	        'display_name' 			=> 'Cấp Bậc Người Dùng',
 	        "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	        "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
 	    ]);
+	    DB::table('permissions')->insert([
+	        'name'              => 'borrow_back',
+	        'display_name' 			=> 'Quản Lí Trả Sách',
+	        "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+	        "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+	    ]);
+	    DB::table('permissions')->insert([
+	        'name'              => 'borrow',
+	        'display_name' 			=> 'Quản Lí Mượn Sách',
+	        "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+	        "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+	    ]);
+	    DB::table('permissions')->insert([
+	        'name'              => 'borrow_all',
+	        'display_name' 			=> 'Lịch Sử',
+	        "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+	        "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+	    ]);
+
         DB::table('users')->insert([
             'name'              => 'admin',
             'email'             => 'admin@admin.com',
@@ -88,12 +107,14 @@ class admin_seed extends Seeder
             "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
             "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
         ]);
-        DB::table('role_permission')->insert([
-            'permission_id'     => '1',
-            'role_id'      		=> '1',
-            "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-            "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
-        ]);
+        for ($i=1; $i <= 12 ; $i++) { 
+	        DB::table('role_permission')->insert([
+	            'permission_id'     => $i,
+	            'role_id'      		=> '1',
+	            "created_at"        =>  \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+	            "updated_at"        => \Carbon\Carbon::now('Asia/Ho_Chi_Minh'),
+	        ]);
+        }
 
     }
 }

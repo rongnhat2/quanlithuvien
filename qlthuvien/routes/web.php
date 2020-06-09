@@ -71,7 +71,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
 
 
     // modulle user_class
-    Route::prefix('borrow_all')->group(function () {
+    Route::middleware(['checkacl:borrow_all'])->prefix('borrow_all')->group(function () {
 
         // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
         // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
@@ -85,7 +85,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
     });
 
     // modulle user_class
-    Route::prefix('borrow_back')->group(function () {
+    Route::middleware(['checkacl:borrow_back'])->prefix('borrow_back')->group(function () {
 
         // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
         // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
@@ -101,7 +101,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
     });
 
     // modulle user_class
-    Route::prefix('borrow')->group(function () {
+    Route::middleware(['checkacl:borrow'])->prefix('borrow')->group(function () {
 
         // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
         // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
@@ -117,7 +117,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
     });
 
     // modulle user_class
-    Route::prefix('reader')->group(function () {
+    Route::middleware(['checkacl:reader'])->prefix('reader')->group(function () {
 
         // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
         // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
@@ -135,7 +135,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
     });
 
     // modulle user_class
-    Route::prefix('user_class')->group(function () {
+    Route::middleware(['checkacl:user_class'])->prefix('user_class')->group(function () {
 
         // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
         // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
@@ -153,7 +153,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
     });
 
     // modulle warehouse
-    Route::prefix('warehouse')->group(function () {
+    Route::middleware(['checkacl:warehouse'])->prefix('warehouse')->group(function () {
 
         // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
         // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
@@ -168,7 +168,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
     });
 
     // modulle gallery
-    Route::prefix('statistical')->group(function () {
+    Route::middleware(['checkacl:statistical'])->prefix('statistical')->group(function () {
 
         // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
         // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
@@ -186,7 +186,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
     });
 
     // modulle gallery
-    Route::prefix('gallery')->group(function () {
+    Route::middleware(['checkacl:gallery'])->prefix('gallery')->group(function () {
 
         // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
         // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
@@ -205,7 +205,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
     });
 
     // modulle item
-    Route::prefix('item')->group(function () {
+    Route::middleware(['checkacl:item'])->prefix('item')->group(function () {
 
         // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
         // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
@@ -223,7 +223,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
     });
     
     // modulle category
-    Route::prefix('category')->group(function () {
+    Route::middleware(['checkacl:category'])->prefix('category')->group(function () {
 
         // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
         // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
@@ -241,7 +241,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
     });
 
     // modulle user
-    Route::prefix('users')->group(function () {
+    Route::middleware(['checkacl:users'])->prefix('users')->group(function () {
 
         // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
         // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
@@ -258,7 +258,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
         Route::get('/delete/{id}', 'UserController@delete')->name('user.delete');
     });
     // module role
-    Route::prefix('roles')->group(function () {
+    Route::middleware(['checkacl:roles'])->prefix('roles')->group(function () {
         // Route::middleware(['checkacl:role-list'])->get('/', 'RoleController@index')->name('role.index');
         // Route::middleware(['checkacl:role-add'])->get('/create', 'RoleController@create')->name('role.add');
         // Route::middleware(['checkacl:role-add'])->post('/create', 'RoleController@store')->name('role.store');

@@ -46,7 +46,7 @@ class CustomerController extends Controller
             Session::flash('success', 'Đăng Kí Thành Công');
             return redirect()->route('customer.login', ['id' => 0]);
         } catch (\Exception $exception) {
-            dd($exception);
+            // dd($exception);
 			Session::flash('error', 'Email đã tồn tại');
             return redirect()->route('customer.register');
         }
